@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<style>
+    h1 {
+        font-size: 50px;
+        color: blue;
+    }
+
+    .basictable {
+        background-color: grey;
+    }
+
+    .red {
+        background-color: red;
+    }
+
+    .blue {
+        background-color: lightblue
+    }
+</style>
+
+<body>
+    <h1>Ninjas {{dojo.name}} </h1>
+    <div>
+        <table class="basictable">
+            <thead>
+                <tr class="red">
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Age</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for ninja in dojo.ninjas %}
+                <tr class="blue">
+                    <td>{{ninja.first_name}}</td>
+                    <td>{{ninja.last_name}}</td>
+                    <td>{{ninja.age}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <p><a href="/dojos">Home</a> </p>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<style>
+    h1 {
+        font-size: 50px;
+        color: blue;
+    }
+
+    .container {
+        background-color: white;
+        width: 1400px;
+        height: 1400px;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <div class='columnone'>
+            <h1>New dojo</h1>
+            <form action="/dojo/create" method="POST">
+                <label for="name_of_dojo">Name</label>
+                <input type="text" name="name">
+                <button type="submit">Add Dojo</button>
+            </form>
+        </div>
+        <br>
+        <div class='columntwo'>
+            <h1>All Dojos</h1>
+            <table>
+                <tbody>
+                    {% for dojo in dojos %}
+                    <tr>
+                        <td>
+                            <a href=" /dojos/{{dojo.id}}">{{dojo.name}}</a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            <a href="/ninjas"> <button type="submit"> Add Ninja</button></a>
+        </div>
+    </div>
+</body>
+
+</html>
